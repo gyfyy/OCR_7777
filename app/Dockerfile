@@ -1,4 +1,4 @@
-FROM python:3.9-slim
+FROM python:3.8-slim
 
 WORKDIR /app
 
@@ -12,6 +12,7 @@ RUN python -m pip install --upgrade pip
 # 分步安装依赖
 RUN pip install --no-cache-dir fastapi==0.103.2 uvicorn pydantic==1.10.12 python-multipart==0.0.6
 RUN pip install --no-cache-dir ddddocr==1.4.7
+RUN pip install --no-cache-dir Pillow==8.4.0  # 安装Pillow
 
 # 复制所有文件
 COPY . .
